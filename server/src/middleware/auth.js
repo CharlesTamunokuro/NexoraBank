@@ -81,6 +81,8 @@ export function requireCsrf(req, res, next) {
     cookieNames: Object.keys(req.cookies || {}),
   })
 
+  console.log('RAW COOKIE HEADER PRESENT:', Boolean(req.headers.cookie))
+
   if (!cookie || !header || cookie !== header) {
     return next(new HttpError(403, 'CSRF validation failed. Refresh the page and try again.'))
   }
