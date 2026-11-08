@@ -10,10 +10,22 @@ export function cookieOptions() {
   return {
     httpOnly: true,
     secure: config.nodeEnv === 'production',
-    sameSite: 'strict',
+    sameSite: config.nodeEnv === 'production' ? 'none' : 'strict',
     path: '/',
   }
 }
+
+
+
+
+// export function cookieOptions() {
+//   return {
+//     httpOnly: true,
+//     secure: config.nodeEnv === 'production',
+//     sameSite: 'strict',
+//     path: '/',
+//   }
+// }
 
 export function issueSession(res, subject, kind) {
   const token = jwt.sign({ sub: subject.id, kind }, config.jwtSecret, { expiresIn: '8h' })
