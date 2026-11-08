@@ -174,7 +174,7 @@ router.get('/transfers/:id', requireSession, requireCustomer, asyncRoute(async (
 
 router.post('/transfers/:id/confirm', requireSession, requireCustomer, requireCsrf, writeLimit, asyncRoute(async (req, res) => {
   const transfer = await confirmCustomerTransfer(req.user, req.params.id, req.body.pin)
-  res.json({ transfer, notice: 'Customer confirmation recorded. No external transfer was sent.' })
+  res.json({ transfer, notice: 'Customer confirmation recorded.' })
 }))
 
 router.get('/admin/state', requireSession, requireAdmin, asyncRoute(async (req, res) => {
