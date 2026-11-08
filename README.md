@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Nexora Safe Bank demo
 
 This is a fictional, local demo application. The React/Vite client is in [`react/`](./react/), and its Express/Prisma API is in [`server/`](./server/), a sibling folder as requested. PostgreSQL stores demo profiles, accounts, ledger entries, transfer requests, beneficiaries, notifications, admin records, and audit events.
@@ -108,3 +109,6 @@ Keep the distinction between internal review and external settlement explicit. D
 ## Known demo limitations
 
 No external money movement, real identity verification, customer password-change flow, statements, card services, persistent notification preferences, support ticket/chat service, or real-time event delivery is implemented. Admin interfaces for unsupported operations should not imply a successful backend action. Do not enter real financial or identity details into the demo.
+=======
+# NexoraBank
+>>>>>>> a60ecd27c9862e730af75dd1d2d60b2267e8f301
