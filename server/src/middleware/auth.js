@@ -67,9 +67,30 @@ export function requireAdminRole(...roles) {
   }
 }
 
+
+
+
 export function requireCsrf(req, res, next) {
-  const cookie = req.cookies[CSRF_COOKIE]
+  const cookie = req.cookies?.[CSRF_COOKIE]
   const header = req.get('x-csrf-token')
-  if (!cookie || !header || cookie !== header) return next(new HttpError(403, 'CSRF validation failed. Refresh the page and try again.'))
+
+  console.log('CSRF DEBUG:', {
+    cookiePresent: Boolean(cookie),
+    headerPresent: Boolean(header),
+    tokensMatch: Boolean(cookie && header && cookie === header),
+    cookieNames: Object.keys(req.cookies || {}),
+  })
+
+  if (!cookie || !header || cookie !== header) {
+    return next(new HttpError(403, 'CSRF validation failed. Refresh the page and try again.'))
+  }
+
   next()
 }
+
+// export function requireCsrf(req, res, next) {
+//   const cookie = req.cookies[CSRF_COOKIE]
+//   const header = req.get('x-csrf-token')
+//   if (!cookie || !header || cookie !== header) return next(new HttpError(403, 'CSRF validation failed. Refresh the page and try again.'))
+//   next()
+// }
