@@ -9,7 +9,7 @@
 },
   "scripts": {
     "dev": "node --watch src/server.js",
-    "start": "prisma migrate deploy && npm run admin:create && node src/server.js",
+    "start": "prisma migrate deploy && node src/server.js",
     "build": "prisma generate",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
