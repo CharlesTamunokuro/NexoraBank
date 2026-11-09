@@ -198,7 +198,7 @@ export default function SignupPage() {
               </dl>
               <label className="consent-check"><input type="checkbox" name="certifyIdentity" checked={form.certifyIdentity} onChange={updateField} required /><span>I certify that the information provided is accurate and complete to the best of my knowledge.</span></label>
               <label className="consent-check"><input type="checkbox" name="agreeTerms" checked={form.agreeTerms} onChange={updateField} required /><span>I acknowledge that a real bank would provide account terms, fee disclosures, privacy notices, and required tax certifications before account opening.</span></label>
-              <label className="consent-check"><input type="checkbox" name="agreeElectronic" checked={form.agreeElectronic} onChange={updateField} required /><span>I consent to electronic delivery of account documents for this interactive demo.</span></label>
+              <label className="consent-check"><input type="checkbox" name="agreeElectronic" checked={form.agreeElectronic} onChange={updateField} required /><span>I consent to electronic delivery of account documents for this Account.</span></label>
               {/* <p className="signup-final-note">A simulated profile and zero-balance account will be created in the local demo database. This prototype is not a bank, does not verify identity, and does not provide banking services.</p> */}
             </div>
           )}
@@ -206,7 +206,7 @@ export default function SignupPage() {
           {error && <p className="login-error" role="alert">{error}</p>}
           <div className="signup-actions">
             {step > 0 ? <button className="button button-outline" type="button" onClick={handleBack}>Back</button> : <Link className="button button-outline" href="/">Cancel</Link>}
-            <button className="button button-dark" type="submit" disabled={submitting}>{submitting ? 'Creating profile…' : step === steps.length - 1 ? 'Create demo profile' : 'Continue'} <Icon name="arrow" size={16} /></button>
+            <button className="button button-dark" type="submit" disabled={submitting}>{submitting ? 'Creating profile…' : step === steps.length - 1 ? 'Create Profile' : 'Continue'} <Icon name="arrow" size={16} /></button>
           </div>
         </form>
         {/* <div className="signup-footer"><Icon name="lock" size={15} /><span>Never share real sensitive information in this demo.</span><span>•</span><Link href="/support">Need help?</Link></div> */}
