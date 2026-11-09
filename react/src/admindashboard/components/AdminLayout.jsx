@@ -47,7 +47,7 @@ export function AdminLayout({ path, children }) {
       {drawerOpen && <button className="admin-drawer-scrim" type="button" aria-label="Close admin navigation" onClick={() => setDrawerOpen(false)} />}
       <aside className={`admin-sidebar${drawerOpen ? ' drawer-open' : ''}`}>
         <Link className="admin-brand" href="/admin" onClick={() => setDrawerOpen(false)}><img src="/nexora.svg" alt="" /><span>Nexora <small>Safe Bank · Admin</small></span></Link>
-        <div className="admin-env-tag"><span /> DEMO OPERATIONS</div>
+        <div className="admin-env-tag"><span /> ADMIN OPERATIONS</div>
         <nav className="admin-side-nav" aria-label="Admin navigation">
           {groups.map((group) => {
             const items = ADMIN_ROUTE_ITEMS.filter((item) => item.group === group && (!item.permission || hasAdminPermission(activeAdmin?.role, item.permission)))
